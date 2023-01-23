@@ -1,7 +1,10 @@
 package com.example.quizapp_ii
 
-import android.support.v7.app.AppCompatActivity
+
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.quizapp_ii.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -11,5 +14,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnStart.setOnClickListener {
+
+            if(binding.etName.text.toString().isEmpty()){
+                Toast.makeText(this@MainActivity, "Please enter your name", Toast.LENGTH_LONG).show()
+            }else {
+                val intent = Intent(this, QuizQuestionActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
     }
 }
