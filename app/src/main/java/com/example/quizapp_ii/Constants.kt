@@ -1,7 +1,13 @@
 package com.example.quizapp_ii
 
 class Constants {
+
     companion object {
+
+        const val USER_NAME: String = "user_name"
+        const val TOTAL_QUESTIONS: String = "total_questions"
+        const val CORRECT_ANSWERS: String = "correct_answers"
+
         fun getQuestions(): ArrayList<Question> {
             val questionsList = ArrayList<Question>()
 
@@ -13,7 +19,7 @@ class Constants {
                 "Argentina",
                 "Austria",
                 "Armenia",
-                "Ukraine",
+                "Australia",
                 1
             )
             questionsList.add(que1)
